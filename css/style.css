@@ -1,0 +1,46 @@
+
+.header__title 
+{
+    font: normal 400 26px/26px 'Lora';
+    color: #000000;
+}
+
+.header__nav-menu__menu-item
+{
+    text-decoration: none;
+    font: normal 400 12px/20px 'Oxygen';
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #000000;
+}
+.main
+{
+    height: 500px;
+    background: url("../res/images/escape.jpg");
+}
+
+.main__title 
+{
+    font: normal 400 50px/51px 'Lora';
+    /* text-align: center; */
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.main__text
+{
+    font: normal 400 17px/20px 'Oxygen';
+    /* text-align: center; */
+    color: rgba(255, 255, 255, 0.63);
+}
+
+
+.main__button
+{
+    font: normal 400 13px/20px 'Oxygen';
+    padding: 12px 31px;
+    color: #fff;
+    background: #DD783F;
+    border: 0;
+    border-radius: 3px;
+}
