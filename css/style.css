@@ -1,15 +1,15 @@
-.header
+.nav-block
 {
     height: 40px;
 }
 
-.header__title 
+.nav-block__title
 {
     font: normal 400 26px/26px 'Lora';
     color: #000;
 }
 
-.header__nav-menu__menu-item
+.nav-block__nav-menu__menu-item
 {
     text-decoration: none;
     font: normal 400 12px/20px 'Oxygen';
@@ -18,28 +18,26 @@
     color: #000;
 }
 
-.main
+.top-block
 {
     height: 500px;
     background: url("../res/images/escape.jpg");
 }
 
-.main__title 
+.top-block__title
 {
     font: normal 400 50px/51px 'Lora';
-    /* text-align: center; */
     letter-spacing: 2px;
     color: #fff;
 }
 
-.main__text
+.top-block__text
 {
     font: normal 400 17px/20px 'Oxygen';
-    /* text-align: center; */
     color: rgba(255, 255, 255, 0.63);
 }
 
-.main__button
+.top-block__button
 {
     font: normal 400 13px/20px 'Oxygen';
     padding: 12px 31px;
@@ -47,4 +45,124 @@
     background: #DD783F;
     border: 0;
     border-radius: 3px;
+}
+
+.categories-menu
+{
+    height: 65px;
+    background: #FFFFFF;
+    border-radius: 0px;
+}
+
+.categories-menu__menu-item
+{
+    text-decoration: none;
+    font: normal 400 14px/20px 'Lora';
+    color: #768088;
+}
+
+.content
+{
+    /* height: 1255px; */
+    background-color: #F7F7F7;
+}
+
+.content__articles-grid__title
+{
+    font: normal 400 20px/27px 'Oxygen';
+    letter-spacing: 2px;
+    color: #2E2E2E;
+}
+
+.content__articles-grid__divider
+{
+    width: 100px;
+    border: 1px solid #DEDEDE;
+}
+
+.content__articles-grid__grid-item-large
+{
+    /* position: relative;
+    text-align: center; */
+    border-radius: 3px;
+}
+
+.content__articles-grid__grid-item-large__label
+{
+    font: normal 400 12px/13px 'Oxygen';
+    text-transform: uppercase;
+    padding: 6px 9px;
+    color: #fff;
+    background: #DD783F;
+    border: 0;
+    border-radius: 2px;
+}
+
+.content__articles-grid__grid-item-large__title
+{
+    /* position: absolute; */
+    font: normal 400 27px/30px 'Lora';
+    color: #000;
+    /* bottom: 8px;
+    left: 10px; */
+}
+
+.content__articles-grid__grid-item-large__text
+{
+    /* position: absolute; */
+    font: normal 400 14px/25px 'Oxygen';
+    color: rgba(0, 0, 0, 0.7);
+    /* bottom: 8px;
+    left: 16px; */
+}
+
+.content__articles-grid__grid-item-large__author-img
+{
+    /* position: absolute; */
+    height: 26px;
+    border-radius: 60px;
+}
+
+.content__articles-grid__grid-item-large__author-name
+{
+    /* position: absolute; */
+    font: normal 400 12px/35px 'Oxygen';
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.content__articles-grid__grid-item-large__date
+{
+    /* position: absolute; */
+    font: normal 400 12px/35px 'Oxygen';
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.content__articles-grid__grid-item-small__title
+{
+    font: normal 400 16px/21px 'Lora';
+    color: #101315;
+}
+
+.content__articles-grid__grid-item-small__text
+{
+    font: normal 400 13px/19px 'Oxygen';
+    color: #7A7A7A;
+}
+
+.content__articles-grid__grid-item-small__extra-info__author-photo
+{
+    height: 26px;
+    border-radius: 60px;
+}
+
+.content__articles-grid__grid-item-small__extra-info__author-name
+{
+    font: normal 400 11px/35px 'Oxygen';
+    color:#999999;
+}
+
+.content__articles-grid__grid-item-small__extra-info__date
+{
+    font: normal 400 12px/35px 'Oxygen';
+    color:#999999;
 }
