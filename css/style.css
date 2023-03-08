@@ -1,15 +1,15 @@
-.nav-block
+.nav
 {
     height: 40px;
 }
 
-.nav-block__title
+.nav__title
 {
     font: normal 400 26px/26px 'Lora';
     color: #000;
 }
 
-.nav-block__nav-menu__menu-item
+.menu__item
 {
     text-decoration: none;
     font: normal 400 12px/20px 'Oxygen';
@@ -18,26 +18,26 @@
     color: #000;
 }
 
-.top-block
+.header
 {
     height: 500px;
     background: url("../res/images/escape.jpg");
 }
 
-.top-block__title
+.topic__headline_header
 {
     font: normal 400 50px/51px 'Lora';
     letter-spacing: 2px;
     color: #fff;
 }
 
-.top-block__text
+.topic__subheadline_header
 {
     font: normal 400 17px/20px 'Oxygen';
     color: rgba(255, 255, 255, 0.63);
 }
 
-.top-block__button
+.header__button
 {
     font: normal 400 13px/20px 'Oxygen';
     padding: 12px 31px;
@@ -47,14 +47,14 @@
     border-radius: 3px;
 }
 
-.categories-menu
+.categories
 {
     height: 65px;
     background: #FFFFFF;
     border-radius: 0px;
 }
 
-.categories-menu__menu-item
+.categories__item
 {
     text-decoration: none;
     font: normal 400 14px/20px 'Lora';
@@ -67,27 +67,33 @@
     background-color: #F7F7F7;
 }
 
-.content__articles-grid__title
+.heading__title
 {
     font: normal 400 20px/27px 'Oxygen';
     letter-spacing: 2px;
     color: #2E2E2E;
 }
 
-.content__articles-grid__divider
+.heading__title_footer
+{
+    font: normal 400 25px/30px 'Oxygen';
+    color: #EFEFEF;
+}
+
+/* .content__articles-grid__divider
 {
     width: 100px;
     border: 1px solid #DEDEDE;
-}
+} */
 
-.content__articles-grid__grid-item-large
+.articles__card-large
 {
     /* position: relative;
     text-align: center; */
     border-radius: 3px;
 }
 
-.content__articles-grid__grid-item-large__label
+.card-large__label
 {
     font: normal 400 12px/13px 'Oxygen';
     text-transform: uppercase;
@@ -98,7 +104,7 @@
     border-radius: 2px;
 }
 
-.content__articles-grid__grid-item-large__title
+.topic__headline_big
 {
     /* position: absolute; */
     font: normal 400 27px/30px 'Lora';
@@ -107,7 +113,13 @@
     left: 10px; */
 }
 
-.content__articles-grid__grid-item-large__text
+.topic__headline
+{
+    font: normal 400 16px/21px 'Lora';
+    color: #101315;
+}
+
+.topic__subheadline_big
 {
     /* position: absolute; */
     font: normal 400 14px/25px 'Oxygen';
@@ -116,53 +128,42 @@
     left: 16px; */
 }
 
-.content__articles-grid__grid-item-large__author-img
-{
-    /* position: absolute; */
-    height: 26px;
-    border-radius: 60px;
-}
-
-.content__articles-grid__grid-item-large__author-name
-{
-    /* position: absolute; */
-    font: normal 400 12px/35px 'Oxygen';
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.content__articles-grid__grid-item-large__date
-{
-    /* position: absolute; */
-    font: normal 400 12px/35px 'Oxygen';
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.content__articles-grid__grid-item-small__title
-{
-    font: normal 400 16px/21px 'Lora';
-    color: #101315;
-}
-
-.content__articles-grid__grid-item-small__text
+.topic__subheadline
 {
     font: normal 400 13px/19px 'Oxygen';
     color: #7A7A7A;
 }
 
-.content__articles-grid__grid-item-small__extra-info__author-photo
+.properties
 {
+    font: normal 400 12px/35px 'Oxygen';
+}
+
+.properties__author-photo
+{
+    /* position: absolute; */
     height: 26px;
     border-radius: 60px;
 }
 
-.content__articles-grid__grid-item-small__extra-info__author-name
+.properties__author-name_big
 {
-    font: normal 400 11px/35px 'Oxygen';
+    /* position: absolute; */
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.properties__author-name
+{
     color:#999999;
 }
 
-.content__articles-grid__grid-item-small__extra-info__date
+.properties__date_big
 {
-    font: normal 400 12px/35px 'Oxygen';
-    color:#999999;
+    /* position: absolute; */
+    color: rgba(0, 0, 0, 0.7);
 }
+
+.properties__date
+{
+    color:#999999;
+}   
