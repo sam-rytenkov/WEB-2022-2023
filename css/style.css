@@ -19,6 +19,7 @@
 
 .nav_with-background
 {
+    height: 90px;
     background: rgba(35, 47, 56, 0.6);
     border-radius: 0px;
 }
@@ -53,9 +54,19 @@
     color: #FFFFFF;
 }
 
-.menu__item + .menu__item
+.menu__item_secondary-style
+{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.menu__item_secondary-style + .menu__item_secondary-style
 {
     margin-left: 40px;
+}
+
+.menu__item + .menu__item
+{
+    margin-left: 20px;
 }
 
 .header__headline
@@ -108,6 +119,7 @@
     width: 100%;
     border: none;
     background: #F7F7F7;
+    margin-bottom: 0px;
 }
 
 .main__categories
@@ -212,13 +224,13 @@
 
 .card-big__caption
 {
+    margin-right: 10px;
     margin-left: 20px;
     margin-bottom: 20px;
 }
 
 .caption
 {
-    height: 35px;
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -230,7 +242,6 @@
 .caption__photo
 {
     border-radius: 60px;
-    margin-right: 10px;
 }
 
 .card-big__label {
@@ -248,9 +259,124 @@
     margin-top: 20px;
 }
 
+.posts__card-small
+{
+    width: 300px;
+    height: 300px;
+}
+
+.card-small
+{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    background: #FFFFFF;
+}
+
+.card-small__image
+{
+    height: 150px;
+    width: 300px;
+    margin-bottom: 0px;
+}
+
+.card-small__headline
+{
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #101315;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+.card-small__subheadline
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+    color: #7A7A7A;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-top: 0px;
+}
+
+.caption_recent
+{
+    color: #999999;
+    background: #FCFCFC;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
 .footer
 {
     background: url('../res/images/stay-in-touch.jpg');
     height: 380px;
     width: 100%;
+}
+
+.footer__title
+{
+    position: relative;
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #EFEFEF;
+    margin-bottom: 40px;
+}
+
+.footer__title::after
+{
+    content: '';
+    position: absolute;
+    display: block;
+    margin-top: 16px;
+    border-top: 1px solid #DEDEDE;
+    border-radius: 0;
+    width: 180px;
+}
+
+.footer__input
+{
+    display: inline-block;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #817F83;
+    background: #FFFFFF;
+    border-radius: 3px 0px 0px 3px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 35px;
+    padding-right: 35px;
+    width: 305px;
+    border: none;
+}
+
+.footer__button
+{
+    display: inline-block;
+    width: 125px;
+    height: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #F8F8F8;
+    border: none;
+    background: rgba(255, 255, 255, 0.28);
+    border-radius: 0px 3px 3px 0px;
 }
