@@ -61,12 +61,12 @@
 
 .menu__item_secondary-style + .menu__item_secondary-style
 {
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 .menu__item + .menu__item
 {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .header__headline
