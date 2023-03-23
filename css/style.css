@@ -138,11 +138,6 @@
     margin-left: 100px;
 }
 
-.main__posts
-{
-    /* text-align: center; */
-}
-
 .posts__title
 {
     position: relative;
@@ -251,4 +246,11 @@
     border-radius: 2px;
     margin-left: 20px;
     margin-top: 20px;
+}
+
+.footer
+{
+    background: url('../res/images/stay-in-touch.jpg');
+    height: 380px;
+    width: 100%;
 }
