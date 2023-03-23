@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Escape.</title>
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header class="nav"> 
-      <span class="nav__title">Escape.</span>
-      <nav class="nav__menu menu">
-        <a class="menu__item" href="#">HOME</a>
-        <a class="menu__item" href="#">CATEGORIES</a>
-        <a class="menu__item" href="#">ABOUT</a>
-        <a class="menu__item" href="#">CONTACT</a>
-      </nav>
-    </header>
-    <main>
-      <div class="header">
-        <div class="header__topic topic">
-          <h1 class="topic__headline_header">Let's do it together.</h1>
-          <p class="topic__subheadline_header">We travel the world in search of stories. Come along for the ride.</p>
-        </div>
-        <button class="header__button">View Latest Posts</button>
+    <header class="header"> 
+      <div class="header__nav nav">
+        <span class="nav__title">Escape.</span>
+        <nav class="nav__menu menu">
+          <a class="menu__item" href="#">HOME</a>
+          <a class="menu__item" href="#">CATEGORIES</a>
+          <a class="menu__item" href="#">ABOUT</a>
+          <a class="menu__item" href="#">CONTACT</a>
+        </nav>
       </div>
-      <nav class="categories">
+      <h1 class="header__headline">Let's do it together.</h1>
+      <p class="header__subheadline">We travel the world in search of stories. Come along for the ride.</p>
+      <button class="header__button">View Latest Posts</button>
+    </header>
+    <main class="main">
+      <nav class="main__categories categories">
         <a class="categories__item" href="#">Nature</a>
         <a class="categories__item" href="#">Photography</a>
         <a class="categories__item" href="#">Relaxation</a>
@@ -31,125 +33,99 @@
         <a class="categories__item" href="#">Travel</a>
         <a class="categories__item" href="#">Adventure</a>
       </nav>
-      <div class="content">
-        <section class="content__articles articles"> 
-          <div class="articles__heading heading">
-            <h2 class="heading__title">Featured Posts</h2>
+      <section class="main__posts posts"> 
+        <h2 class="posts__title">Featured Posts</h2>
+        <div class="posts__card-big card-big card-big_background-1">
+          <h3 class="card-big__headline">The Road Ahead</h3>
+          <p class="card-big__subheadline">The road ahead might be paved - it might not be.</p>
+          <div class="card-big__caption caption">
+            <img class="caption__photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
+            <span class="caption__name">Mat Vogels</span>
+            <span class="caption__date">September 25, 2015</span>
           </div>
-          <div class="articles__card-large">
-            <!-- <img class="card-large__image" src="../res/images/the-road-ahead.jpg" alt="The Road Ahead"> -->
-            <div class="card-large__topic topic">
-              <h3 class="topic__headline_big">The Road Ahead</h3>
-              <p class="topic__subheadline_big">The road ahead might be paved - it might not be.</p>
-            </div>
-            <div class="card-large__properties properties">
-              <img class="properties__author-photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
-              <span class="properties__author-name_big">Mat Vogels</span>
-              <span class="properties__date_big">September 25, 2015</span>
-            </div>
+        </div>
+        <div class="posts__card card-big card-big_background-2">
+          <span class="card-big__label">Adventure</span> 
+          <h3 class="card-big__headline">From Top Down</h3>
+          <p class="card-big__subheadline">Once a year, go someplace you’ve never been before.</p>
+          <div class="card-big__caption caption">
+            <img class="caption__photo" src="../res/images/william-wong.jpg" alt="William Wong">
+            <span class="caption__name">William Wong</span>
+            <span class="caption__date">September 25, 2015</span>
           </div>
-          <div class="articles__card-large">
-            <!-- <img class="grid-item-large__image" src="../res/images/from-top-down.jpg" alt="From Top Down"> -->
-            <span class="card-large__label">Adventure</span>
-            <div class="card-large__topic topic">
-              <h3 class="topic__headline_big">From Top Down</h3>
-              <p class="topic__subheadline_big">Once a year, go someplace you’ve never been before.</p>
-            </div>
-            <div class="card-large__properties properties">
-              <img class="properties__author-photo" src="../res/images/william-wong.jpg" alt="William Wong">
-              <span class="properties__author-name_big">William Wong</span>
-              <span class="properties__date_big">September 25, 2015</span>
-            </div>
+        </div>
+      </section>
+      <section class="main__posts posts">
+        <h2 class="posts__title">Most Recent</h2>
+        <div class="posts__card-small card-small">
+          <img class="card-small__image" src="../res/images/still-standing-tall.jpg" alt="Still Standing Tall">
+          <h3 class="card-small__headline">Still Standing Tall</h3>
+          <p class="card-small__subheadline">Life begins at the end of your comfort zone.</p>
+          <div class="card-small__caption caption">
+            <img class="caption__photo" src="../res/images/william-wong.jpg" alt="William Wong">
+            <span class="caption__name">William Wong</span>
+            <span class="caption__date">9/25/2015</span>
           </div>
-        </section>
-        <section class="content__articles articles">
-          <div class="articles__heading heading">
-            <h2 class="heading__title">Most Recent</h2>
+        </div>
+        <div class="posts__card-small card-small">
+          <img class="card-small__image" src="../res/images/sunny-side-up.jpg" alt="Sunny Side Up">
+          <h3 class="card-small__headline">Sunny Side Up</h3>
+          <p class="card-small__subheadline">No place is ever as bad as they tell you it’s going to be.</p>
+          <div class="card-small__caption caption">
+            <img class="caption__photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
+            <span class="caption__name">Mat Vogels</span>
+            <span class="caption__date">9/25/2015</span>
           </div>
-          <div class="articles__card-small">
-            <img class="card-small__image" src="../res/images/still-standing-tall.jpg" alt="Still Standing Tall">
-            <div class="card-small__topic topic">
-              <h3 class="topic__headline">Still Standing Tall</h3>
-              <p class="topic__subheadline">Life begins at the end of your comfort zone.</p>
-            </div>
-            <div class="card-small__properties properties">
-              <img class="properties__author-photo" src="../res/images/william-wong.jpg" alt="William Wong">
-              <span class="properties__author-name">William Wong</span>
-              <span class="properties__date">9/25/2015</span>
-            </div>
+        </div>
+        <div class="posts__card-small card-small">
+          <img class="card-small__image" src="../res/images/water-falls.jpg" alt="Water Falls">
+          <h3 class="card-small__headline">Water Falls</h3>
+          <p class="card-small__subheadline">We travel not to escape life, but for life not to escape us.</p>
+          <div class="card-small__caption caption">
+            <img class="caption__photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
+            <span class="caption__name">Mat Vogels</span>
+            <span class="caption__date">9/25/2015</span>
           </div>
-          <div class="articles__card-small">
-            <img class="card-small__image" src="../res/images/sunny-side-up.jpg" alt="Sunny Side Up">
-            <div class="card-small__topic topic">
-              <h3 class="topic__headline">Sunny Side Up</h3>
-              <p class="topic__subheadline">No place is ever as bad as they tell you it’s going to be.</p>
-            </div>
-            <div class="card-small__properties properties">
-              <img class="properties__author-photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
-              <span class="properties__author-name">Mat Vogels</span>
-              <span class="properties__date">9/25/2015</span>
-            </div>
+        </div>
+        <div class="posts__card-small card-small">
+          <img class="card-small__image" src="../res/images/through-the-mist.jpg" alt="Through the Mist">
+          <h3 class="card-small__headline">Through the Mist</h3>
+          <p class="card-small__subheadline">Travel makes you see what a tiny place you occupy in the world.</p>
+          <div class="card-small__caption caption"> 
+            <img class="caption__photo" src="../res/images/william-wong.jpg" alt="William Wong">
+            <span class="caption__name">William Wong</span>
+            <span class="caption__date">9/25/2015</span>
           </div>
-          <div class="articles__card-small">
-            <img class="card-small__image" src="../res/images/water-falls.jpg" alt="Water Falls">
-            <div class="card-small__topic topic">
-              <h3 class="topic__headline">Water Falls</h3>
-              <p class="topic__subheadline">We travel not to escape life, but for life not to escape us.</p>
-            </div>
-            <div class="card-small__properties properties">
-              <img class="properties__author-photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
-              <span class="properties__author-name">Mat Vogels</span>
-              <span class="properties__date">9/25/2015</span>
-            </div>
+        </div>
+        <div class="posts__card-small card-small">
+          <img class="card-small__image" src="../res/images/awaken-early.jpg" alt="Awaken Early">
+          <h3 class="card-small__headline">Awaken Early</h3>
+          <p class="card-small__subheadline">Not all those who wander are lost.</p>
+          <div class="card-small__caption caption"> 
+            <img class="caption__photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
+            <span class="caption__name">Mat Vogels</span>
+            <span class="caption__date">9/25/2015</span>
           </div>
-          <div class="articles__card-small">
-            <img class="card-small__image" src="../res/images/through-the-mist.jpg" alt="Through the Mist">
-            <div class="card-small__topic topic">
-              <h3 class="topic__headline">Through the Mist</h3>
-              <p class="topic__subheadline">Travel makes you see what a tiny place you occupy in the world.</p>
-            </div>
-            <div class="card-small__properties properties"> 
-              <img class="properties__author-photo" src="../res/images/william-wong.jpg" alt="William Wong">
-              <span class="properties__author-name">William Wong</span>
-              <span class="properties__date">9/25/2015</span>
-            </div>
+        </div>
+        <div class="posts__card-small card-small">
+          <img class="card-small__image" src="../res/images/try-it-always.jpg" alt="Try it Always">
+          <h3 class="card-small__headline">Try it Always</h3>
+          <p class="card-small__subheadline">The world is a book, and those who do not travel read only one page.</p>
+          <div class="card-small__caption caption"> 
+            <img class="caption__photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
+            <span class="caption__name">Mat Vogels</span>
+            <span class="caption__date">9/25/2015</span>
           </div>
-          <div class="articles__card-small">
-            <img class="card-small__image" src="../res/images/awaken-early.jpg" alt="Awaken Early">
-            <div class="card-small__topic topic">
-              <h3 class="topic__headline">Awaken Early</h3>
-              <p class="topic__subheadline">Not all those who wander are lost.</p>
-            </div>
-            <div class="card-small__properties properties"> 
-              <img class="properties__author-photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
-              <span class="properties__author-name">Mat Vogels</span>
-              <span class="properties__date">9/25/2015</span>
-            </div>
-          </div>
-          <div class="articles__card-small">
-            <img class="card-small__image" src="../res/images/try-it-always.jpg" alt="Try it Always">
-            <div class="card-small__topic topic">
-              <h3 class="topic__headline">Try it Always</h3>
-              <p class="topic__subheadline">The world is a book, and those who do not travel read only one page.</p>
-            </div>
-            <div class="card-small__properties properties"> 
-              <img class="cproperties__author-photo" src="../res/images/mat-vogels.jpg" alt="Mat Vogels">
-              <span class="properties__author-name">Mat Vogels</span>
-              <span class="properties__date">9/25/2015</span>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__form form">
-        <div class="form__heading heading">
-          <h2 class="heading__title_footer">Stay in Touch</h2>
-        </div>
+        <h2 class="form__heading heading">Stay in Touch</h2>
         <input class="form__input"  type="text" placeholder="Enter your email address">
         <button class="form__button">Submit</button>
       </div>
-      <div class="footer__nav nav_with-background">
+      <div class="footer__nav nav nav_with-background">
         <span class="nav__title">Escape.</span>
         <nav class="nav__menu menu">
           <a class="menu__item" href="#">HOME</a>
