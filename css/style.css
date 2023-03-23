@@ -17,6 +17,12 @@
     color: #fff;
 }
 
+.nav_with-background
+{
+    background: rgba(35, 47, 56, 0.6);
+    border-radius: 0px;
+}
+
 .nav__title
 {
     display: inline-block;
@@ -192,6 +198,7 @@
     line-height: 30px;
     color: #FFFFFF;
     margin-left: 20px;
+    margin-top: 0px;
     margin-bottom: 6px;
 }
 
@@ -229,4 +236,19 @@
 {
     border-radius: 60px;
     margin-right: 10px;
+}
+
+.card-big__label {
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 6px 10px;
+    background: #DD783F;
+    border-radius: 2px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
