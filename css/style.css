@@ -120,7 +120,6 @@
     width: 100%;
     border: none;
     background: #F7F7F7;
-    margin-bottom: 0px;
 }
 
 .main__categories
@@ -241,11 +240,13 @@
 }
 
 .caption__photo
-{
+{   
     border-radius: 60px;
+    margin-right: 10px;
 }
 
-.card-big__label {
+.card-big__label 
+{
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -277,7 +278,6 @@
 {
     height: 150px;
     width: 300px;
-    margin-bottom: 0px;
 }
 
 .card-small__headline
@@ -315,6 +315,9 @@
     padding-bottom: 6px;
     padding-left: 14px;
     padding-right: 14px;
+    border-top-style: solid;
+    border-top-color: #EFEFEF;
+    border-top-width: 1px;    
 }
 
 .footer
