@@ -1,6 +1,6 @@
 .header
 {
-    background-image: url("../static/images/let\'s-do-it-together.jpg");
+    background-image: url("../images/let\'s-do-it-together.jpg");
     background-color: rgba(0, 0, 0, 0.5);
     height: 500px;
     width: 100%;
@@ -188,12 +188,12 @@
 
 .card-big_background-1
 {
-    background-image: url("../static/images/the-road-ahead.jpg");
+    background-image: url("../images/the-road-ahead.jpg");
 }
 
 .card-big_background-2
 {
-    background-image: url("../static/images/from-top-down.jpg");
+    background-image: url("../images/from-top-down.jpg");
 }
 
 .card-big__headline
@@ -322,7 +322,7 @@
 
 .footer
 {
-    background: url('../static/images/stay-in-touch.jpg');
+    background: url('../images/stay-in-touch.jpg');
     height: 380px;
     width: 100%;
 }
