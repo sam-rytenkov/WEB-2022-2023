@@ -1,15 +1,40 @@
+body
+{
+    margin: 0px;
+    background: #F7F7F7;
+}
+
 .header
 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: url("../images/let\'s-do-it-together.jpg");
     background-color: rgba(0, 0, 0, 0.5);
     height: 500px;
     width: 100%;
 }
 
+.header-post
+{
+    background-color: #fff;
+    height: 360px;
+    width: 100%;
+}
+
 .header__nav
 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 940px;
+    height: 40px;
+    margin-top: 16px;
+}
+
+.header-post__nav
+{
+    height: 40px;
 }
 
 .nav
@@ -32,6 +57,11 @@
     line-height: 26px;
 }
 
+.nav__title_color-black
+{
+    color: #2E2E2E;
+}
+
 .nav__menu
 {
     display: inline-block;
@@ -52,6 +82,11 @@
 {
     text-decoration: none;
     color: #FFFFFF;
+}
+
+.menu__item_color-black
+{
+    color: #2E2E2E;
 }
 
 .menu__item_secondary-style
@@ -84,6 +119,12 @@
     color: #FFFFFF;
 }
 
+.header__headline_color-black
+{
+    color: #2E2E2E;
+    margin-top: 100px;
+}
+
 .header__subheadline
 {
     text-align: center;
@@ -95,6 +136,11 @@
     font-size: 17px;
     line-height: 20px;
     color: rgba(255, 255, 255, 0.63);
+}
+
+.header__subheadline_color-black
+{
+    color: #2E2E2E;
 }
 
 .header__button
@@ -117,15 +163,26 @@
 
 .main
 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     border: none;
-    background: #F7F7F7;
+    padding-bottom: 100px;
+    /* background: #FFF; */
 }
 
 .main__categories
 {
+    width: 940px;
+    max-width: 100%;
+    padding-left: 240px;
+    padding-right: 240px;
     height: 65px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .categories
@@ -145,14 +202,28 @@
     color: #768088;
 }
 
-.categories__item + .categories__item
+.main__posts
 {
-    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 960px;
+    background: #F7F7F7;
 }
 
 .posts__title
 {
-    position: relative;
+    margin-right: 50%;
+    margin-left: 50%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -161,29 +232,36 @@
     letter-spacing: 2px;
     color: #2E2E2E;
     margin-top: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .posts__title::after
 {
     content: '';
-    position: absolute;
     display: block;
     margin-top: 16px;
     border-top: 1px solid #DEDEDE;
     border-radius: 0;
-    width: 180px;
+    width: 180px;   
 }
 
 .posts__card-big
 {
     height: 280px;
     width: 460px;
+    flex-shrink: 0;
 }
 
 .card-big 
 {
-    border-radius: 3px;    
+    position: relative;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .card-big_background-1
@@ -206,7 +284,7 @@
     color: #FFFFFF;
     margin-left: 20px;
     margin-top: 0px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .card-big__subheadline
@@ -217,20 +295,24 @@
     font-size: 14px;
     line-height: 25px;
     color: rgba(255, 255, 255, 0.7);
-    margin-top: 6px;
+    margin-top: 0px;
     margin-left: 20px;
     margin-bottom: 12px;
 }
 
 .card-big__caption
 {
+    width: 420px;
     margin-right: 10px;
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .caption
 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -241,12 +323,21 @@
 
 .caption__photo
 {   
+    height: 26px;
+    width: 26px;
     border-radius: 60px;
     margin-right: 10px;
 }
 
+.caption__name
+{
+    flex-grow: 1;
+}
+
 .card-big__label 
 {
+    position: absolute;
+    top: 0px;
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -265,6 +356,11 @@
 {
     width: 300px;
     height: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .card-small
@@ -296,6 +392,7 @@
 
 .card-small__subheadline
 {
+    flex-grow: 1;
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -309,8 +406,12 @@
 
 .caption_recent
 {
+    display: flex;
+    flex-direction: row;
+    width: 272px;
     color: #999999;
     background: #FCFCFC;
+    margin: 0;
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 14px;
@@ -322,29 +423,40 @@
 
 .footer
 {
-    background: url('../images/stay-in-touch.jpg');
     height: 380px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background: url('../images/stay-in-touch.jpg');
 }
 
 .footer__title
 {
-    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    margin-top: 80px;
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
     line-height: 30px;
     color: #EFEFEF;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .footer__title::after
 {
     content: '';
-    position: absolute;
     display: block;
-    margin-top: 16px;
+    margin-top: 18px;
     border-top: 1px solid #DEDEDE;
     border-radius: 0;
     width: 180px;
@@ -383,4 +495,15 @@
     border: none;
     background: rgba(255, 255, 255, 0.28);
     border-radius: 0px 3px 3px 0px;
+}
+
+.footer__nav
+{
+    flex-basis: 100%;
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 250px;
+    padding-right: 250px;
 }
