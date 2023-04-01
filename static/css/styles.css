@@ -9,7 +9,7 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("../images/let\'s-do-it-together.jpg");
+    background-image: url("../img/let\'s-do-it-together.jpg");
     background-color: rgba(0, 0, 0, 0.5);
     height: 500px;
     width: 100%;
@@ -211,7 +211,7 @@ body
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
-    max-width: 960px;
+    max-width: 940px;
     background: #F7F7F7;
 }
 
@@ -266,12 +266,12 @@ body
 
 .card-big_background-1
 {
-    background-image: url("../images/the-road-ahead.jpg");
+    background-image: url("../img/the-road-ahead.jpg");
 }
 
 .card-big_background-2
 {
-    background-image: url("../images/from-top-down.jpg");
+    background-image: url("../img/from-top-down.jpg");
 }
 
 .card-big__headline
@@ -431,7 +431,7 @@ body
     align-items: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    background: url('../images/stay-in-touch.jpg');
+    background: url('../img/stay-in-touch.jpg');
 }
 
 .footer__title
@@ -506,4 +506,65 @@ body
     align-items: center;
     padding-left: 250px;
     padding-right: 250px;
+}
+
+.header-post
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 360px;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.header-post__nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 940px;
+    height: 40px;
+    margin-top: 18px;
+}
+
+.main-post__image
+{
+    height: 534px;
+    width: 100%;
+}
+
+.main-post
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background: #FFFFFF;
+}
+
+.main-post__post
+{
+    width: 940px;
+    max-width: 100%;
+    margin-top: 140px;
+    margin-right: 240px;
+    margin-bottom: 135px;
+    margin-left: 240px;
+}
+
+.post
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #101315;
+    width: 940px;
+    margin-top: 140px;
+    margin-right: 240px;
+    margin-bottom: 135px;
+    margin-left: 240px;
 }
