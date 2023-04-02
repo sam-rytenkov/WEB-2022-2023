@@ -21,7 +21,7 @@ type featuredPostData struct {
 	Headline       string
 	Subheadline    string
 	ImgModificator string
-	Author         string
+	AuthorName     string
 	AuthorPhoto    string
 	PublishDate    string
 	LabelText      string
@@ -31,7 +31,7 @@ type recentPostData struct {
 	Headline    string
 	Subheadline string
 	PostImg     string
-	Author      string
+	AuthorName  string
 	AuthorPhoto string
 	PublishDate string
 }
@@ -47,11 +47,11 @@ type postData struct {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	ts, err := template.ParseFiles("pages/index.html") // Главная страница блога
+	ts, err := template.ParseFiles("pages/index.html")
 	if err != nil {
-		http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
-		log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
-		return                                      // Не забываем завершить выполнение ф-ии
+		http.Error(w, "Internal Server Error", 500)
+		log.Println(err.Error())
+		return
 	}
 
 	data := indexPage{
@@ -60,7 +60,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 		RecentPosts:   getRecentPosts(),
 	}
 
-	err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
+	err = ts.Execute(w, data)
 	if err != nil {
 		http.Error(w, "Internal Server Error", 500)
 		log.Println(err.Error())
@@ -69,11 +69,11 @@ func index(w http.ResponseWriter, r *http.Request) {
 }
 
 func post(w http.ResponseWriter, r *http.Request) {
-	ts, err := template.ParseFiles("pages/post.html") // Главная страница блога
+	ts, err := template.ParseFiles("pages/post.html")
 	if err != nil {
-		http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
-		log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
-		return                                      // Не забываем завершить выполнение ф-ии
+		http.Error(w, "Internal Server Error", 500)
+		log.Println(err.Error())
+		return
 	}
 
 	data := postPage{
@@ -81,7 +81,7 @@ func post(w http.ResponseWriter, r *http.Request) {
 		Post:  getPost(),
 	}
 
-	err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
+	err = ts.Execute(w, data)
 	if err != nil {
 		http.Error(w, "Internal Server Error", 500)
 		log.Println(err.Error())
@@ -95,7 +95,7 @@ func getFeaturedPosts() []featuredPostData {
 			Headline:       "The Road Ahead",
 			Subheadline:    "The road ahead might be paved - it might not be.",
 			ImgModificator: "card-big_background-1",
-			Author:         "Mat Vogels",
+			AuthorName:     "Mat Vogels",
 			AuthorPhoto:    "static/img/mat-vogels.jpg",
 			PublishDate:    "September 25, 2015",
 			LabelText:      "",
@@ -104,7 +104,7 @@ func getFeaturedPosts() []featuredPostData {
 			Headline:       "From Top Down",
 			Subheadline:    "Once a year, go someplace you’ve never been before.",
 			ImgModificator: "card-big_background-2",
-			Author:         "William Wong",
+			AuthorName:     "William Wong",
 			AuthorPhoto:    "static/img/william-wong.jpg",
 			PublishDate:    "September 25, 2015",
 			LabelText:      "Adventure",
@@ -118,7 +118,7 @@ func getRecentPosts() []recentPostData {
 			Headline:    "Still Standing Tall",
 			Subheadline: "Life begins at the end of your comfort zone.",
 			PostImg:     "static/img/still-standing-tall.jpg",
-			Author:      "William Wong",
+			AuthorName:  "William Wong",
 			AuthorPhoto: "static/img/william-wong.jpg",
 			PublishDate: "9/25/2015",
 		},
@@ -126,7 +126,7 @@ func getRecentPosts() []recentPostData {
 			Headline:    "Sunny Side Up",
 			Subheadline: "No place is ever as bad as they tell you it’s going to be.",
 			PostImg:     "static/img/sunny-side-up.jpg",
-			Author:      "Mat Vogels",
+			AuthorName:  "Mat Vogels",
 			AuthorPhoto: "static/img/mat-vogels.jpg",
 			PublishDate: "9/25/2015",
 		},
@@ -134,7 +134,7 @@ func getRecentPosts() []recentPostData {
 			Headline:    "Water Falls",
 			Subheadline: "We travel not to escape life, but for life not to escape us.",
 			PostImg:     "static/img/water-falls.jpg",
-			Author:      "Mat Vogels",
+			AuthorName:  "Mat Vogels",
 			AuthorPhoto: "static/img/mat-vogels.jpg",
 			PublishDate: "9/25/2015",
 		},
@@ -142,7 +142,7 @@ func getRecentPosts() []recentPostData {
 			Headline:    "Through the Mist",
 			Subheadline: "Travel makes you see what a tiny place you occupy in the world.",
 			PostImg:     "static/img/through-the-mist.jpg",
-			Author:      "Mat Vogels",
+			AuthorName:  "Mat Vogels",
 			AuthorPhoto: "static/img/mat-vogels.jpg",
 			PublishDate: "9/25/2015",
 		},
@@ -150,7 +150,7 @@ func getRecentPosts() []recentPostData {
 			Headline:    "Awaken Early",
 			Subheadline: "Not all those who wander are lost.",
 			PostImg:     "static/img/awaken-early.jpg",
-			Author:      "William Wong",
+			AuthorName:  "William Wong",
 			AuthorPhoto: "static/img/william-wong.jpg",
 			PublishDate: "9/25/2015",
 		},
@@ -158,7 +158,7 @@ func getRecentPosts() []recentPostData {
 			Headline:    "Try it Always",
 			Subheadline: "The world is a book, and those who do not travel read only one page.",
 			PostImg:     "static/img/try-it-always.jpg",
-			Author:      "Mat Vogels",
+			AuthorName:  "Mat Vogels",
 			AuthorPhoto: "static/img/mat-vogels.jpg",
 			PublishDate: "9/25/2015",
 		},
