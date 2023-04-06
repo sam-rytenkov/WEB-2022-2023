@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>{{ .Title }}</title>
+    <title>Escape</title>
     <link href="../static/css/styles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,8 +36,10 @@
       <section class="main__posts posts"> 
         <h2 class="posts__title">Featured Posts</h2>
         {{ range .FeaturedPosts }}
-          <div class="posts__card-big card-big {{ .ImgModificator }}">
-            <!-- <span class="card-big__label">Adventure</span>  -->
+          <div class="posts__card-big card-big {{.ImgModificator}}">
+            {{ if .HasLabel }}
+            <span class="card-big__label">{{ .LabelText }}</span> 
+            {{ end }}
             <h3 class="card-big__headline">{{ .Headline }}</h3>
             <p class="card-big__subheadline">{{ .Subheadline }}</p>
             <div class="card-big__caption caption">

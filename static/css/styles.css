@@ -556,15 +556,12 @@ body
 
 .post
 {
+    
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
     color: #101315;
-    width: 940px;
-    margin-top: 140px;
-    margin-right: 240px;
-    margin-bottom: 135px;
-    margin-left: 240px;
+    white-space: pre-line;
 }
