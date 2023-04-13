@@ -4,31 +4,25 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/jmoiron/sqlx"
 )
 
 type indexPage struct {
-	FeaturedPosts []featuredPostData
-	RecentPosts   []recentPostData
+	FeaturedPosts []postsData
+	RecentPosts   []postsData
 }
 
-type featuredPostData struct {
-	Headline       string
-	Subheadline    string
-	ImgModificator string
-	AuthorName     string
-	AuthorPhoto    string
-	PublishDate    string
-	HasLabel       bool
-	LabelText      string
-}
-
-type recentPostData struct {
-	Headline    string
-	Subheadline string
-	PostImg     string
-	AuthorName  string
-	AuthorPhoto string
-	PublishDate string
+type postsData struct {
+	Headline    string `db:"title"`
+	Subheadline string `db:"subtitle"`
+	AuthorName  string `db:"author_name"`
+	AuthorPhoto string `db:"author_photo_url"`
+	PublishDate string `db:"publish_date"`
+	ImageUrl    string `db:"image_url"`
+	HasLabel    bool   `db:"has_label"`
+	LabelText   string `db:"label_text"`
+	Featured    byte   `db:"featured"`
 }
 
 type postData struct {
@@ -38,25 +32,83 @@ type postData struct {
 	Text        string
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
-	ts, err := template.ParseFiles("pages/index.html")
-	if err != nil {
-		http.Error(w, "Internal Server Error", 500)
-		log.Println(err.Error())
-		return
+func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		featuredPosts, recentPosts, err := getPosts(db)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err)
+			return
+		}
+
+		ts, err := template.ParseFiles("pages/index.html")
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err.Error())
+			return
+		}
+
+		data := indexPage{
+			FeaturedPosts: featuredPosts,
+			RecentPosts:   recentPosts,
+		}
+
+		err = ts.Execute(w, data)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err.Error())
+			return
+		}
+
+		log.Println("Request completed successfully")
+	}
+}
+
+func getPosts(db *sqlx.DB) ([]postsData, []postsData, error) {
+	const queryFeatured = `
+		SELECT
+			title,
+			subtitle,
+			author_name,
+			author_photo_url,
+			publish_date,
+			image_url,
+			has_label,
+			label_text
+		FROM
+			post
+		WHERE featured = 1
+	`
+
+	const queryRecent = `
+		SELECT
+			title,
+			subtitle,
+			author_name,
+			author_photo_url,
+			publish_date,
+			image_url,
+			has_label,
+			label_text
+		FROM
+			post
+		WHERE featured = 0
+	`
+
+	var featuredPosts []postsData
+	var recentPosts []postsData
+
+	errorFeatured := db.Select(&featuredPosts, queryFeatured)
+	if errorFeatured != nil {
+		return nil, nil, errorFeatured
 	}
 
-	data := indexPage{
-		FeaturedPosts: getFeaturedPosts(),
-		RecentPosts:   getRecentPosts(),
+	errorRecent := db.Select(&recentPosts, queryRecent)
+	if errorRecent != nil {
+		return nil, nil, errorRecent
 	}
 
-	err = ts.Execute(w, data)
-	if err != nil {
-		http.Error(w, "Internal Server Error", 500)
-		log.Println(err.Error())
-		return
-	}
+	return featuredPosts, recentPosts, nil
 }
 
 func post(w http.ResponseWriter, r *http.Request) {
@@ -85,83 +137,5 @@ func post(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal Server Error", 500)
 		log.Println(err.Error())
 		return
-	}
-}
-
-func getFeaturedPosts() []featuredPostData {
-	return []featuredPostData{
-		{
-			Headline:       "The Road Ahead",
-			Subheadline:    "The road ahead might be paved - it might not be.",
-			ImgModificator: "card-big_background-1",
-			AuthorName:     "Mat Vogels",
-			AuthorPhoto:    "static/img/mat-vogels.jpg",
-			PublishDate:    "September 25, 2015",
-			HasLabel:       false,
-			LabelText:      "",
-		},
-		{
-			Headline:       "From Top Down",
-			Subheadline:    "Once a year, go someplace you’ve never been before.",
-			ImgModificator: "card-big_background-2",
-			AuthorName:     "William Wong",
-			AuthorPhoto:    "static/img/william-wong.jpg",
-			PublishDate:    "September 25, 2015",
-			HasLabel:       true,
-			LabelText:      "Adventure",
-		},
-	}
-}
-
-func getRecentPosts() []recentPostData {
-	return []recentPostData{
-		{
-			Headline:    "Still Standing Tall",
-			Subheadline: "Life begins at the end of your comfort zone.",
-			PostImg:     "static/img/still-standing-tall.jpg",
-			AuthorName:  "William Wong",
-			AuthorPhoto: "static/img/william-wong.jpg",
-			PublishDate: "9/25/2015",
-		},
-		{
-			Headline:    "Sunny Side Up",
-			Subheadline: "No place is ever as bad as they tell you it’s going to be.",
-			PostImg:     "static/img/sunny-side-up.jpg",
-			AuthorName:  "Mat Vogels",
-			AuthorPhoto: "static/img/mat-vogels.jpg",
-			PublishDate: "9/25/2015",
-		},
-		{
-			Headline:    "Water Falls",
-			Subheadline: "We travel not to escape life, but for life not to escape us.",
-			PostImg:     "static/img/water-falls.jpg",
-			AuthorName:  "Mat Vogels",
-			AuthorPhoto: "static/img/mat-vogels.jpg",
-			PublishDate: "9/25/2015",
-		},
-		{
-			Headline:    "Through the Mist",
-			Subheadline: "Travel makes you see what a tiny place you occupy in the world.",
-			PostImg:     "static/img/through-the-mist.jpg",
-			AuthorName:  "Mat Vogels",
-			AuthorPhoto: "static/img/mat-vogels.jpg",
-			PublishDate: "9/25/2015",
-		},
-		{
-			Headline:    "Awaken Early",
-			Subheadline: "Not all those who wander are lost.",
-			PostImg:     "static/img/awaken-early.jpg",
-			AuthorName:  "William Wong",
-			AuthorPhoto: "static/img/william-wong.jpg",
-			PublishDate: "9/25/2015",
-		},
-		{
-			Headline:    "Try it Always",
-			Subheadline: "The world is a book, and those who do not travel read only one page.",
-			PostImg:     "static/img/try-it-always.jpg",
-			AuthorName:  "Mat Vogels",
-			AuthorPhoto: "static/img/mat-vogels.jpg",
-			PublishDate: "9/25/2015",
-		},
 	}
 }
