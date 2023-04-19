@@ -169,7 +169,6 @@ body
     width: 100%;
     border: none;
     padding-bottom: 100px;
-    /* background: #FFF; */
 }
 
 .main__categories
@@ -250,6 +249,7 @@ body
     height: 280px;
     width: 460px;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .card-big 
@@ -262,16 +262,6 @@ body
     justify-content: flex-end;
     align-items: flex-start;
     flex-wrap: wrap;
-}
-
-.card-big_background-1
-{
-    background-image: url("../img/the-road-ahead.jpg");
-}
-
-.card-big_background-2
-{
-    background-image: url("../img/from-top-down.jpg");
 }
 
 .card-big__headline
@@ -361,6 +351,7 @@ body
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    text-decoration: none;
 }
 
 .card-small

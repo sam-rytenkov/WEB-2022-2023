@@ -36,9 +36,9 @@
       <section class="main__posts posts"> 
         <h2 class="posts__title">Featured Posts</h2>
         {{ range .FeaturedPosts }}
-          <div class="posts__card-big card-big {{.ImageUrl}}">
-            {{ if .HasLabel }}
-            <span class="card-big__label">{{ .LabelText }}</span> 
+          <a class="posts__card-big card-big" href="{{ .PostURL }}" style="background-image: url('{{ .ImageUrl }}');">
+            {{ if .LabelText }}
+              <span class="card-big__label">{{ .LabelText }}</span> 
             {{ end }}
             <h3 class="card-big__headline">{{ .Headline }}</h3>
             <p class="card-big__subheadline">{{ .Subheadline }}</p>
@@ -47,13 +47,13 @@
               <span class="caption__name">{{ .AuthorName }}</span>
               <span class="caption__date">{{ .PublishDate }}</span>
             </div>
-          </div>
+          </a>
         {{ end }}
       </section>
       <section class="main__posts posts">
         <h2 class="posts__title">Most Recent</h2>
         {{ range .RecentPosts }}
-          <div class="posts__card-small card-small">
+          <a class="posts__card-small card-small" href="{{ .PostURL }}">
             <img class="card-small__image" src="{{ .ImageUrl }}" alt="{{ .Headline }}">
             <h3 class="card-small__headline">{{ .Headline }}</h3>
             <p class="card-small__subheadline">{{ .Subheadline }}</p>
@@ -62,7 +62,7 @@
               <span class="caption__name">{{ .AuthorName }}</span>
               <span class="caption__date">{{ .PublishDate }}</span>
             </div>
-          </div>
+          </a>
         {{ end }}
       </section>
     </main>
