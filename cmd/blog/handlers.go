@@ -12,8 +12,8 @@ import (
 )
 
 type indexPage struct {
-	FeaturedPosts []*postCardData
-	RecentPosts   []*postCardData
+	FeaturedPosts []postCardData
+	RecentPosts   []postCardData
 }
 
 type postCardData struct {
@@ -27,7 +27,6 @@ type postCardData struct {
 	LabelText   string `db:"label_text"`
 	Featured    byte   `db:"featured"`
 	Content     string `db:"content"`
-	PostURL     string
 }
 
 type postData struct {
@@ -69,7 +68,7 @@ func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func getPosts(db *sqlx.DB) ([]*postCardData, []*postCardData, error) {
+func getPosts(db *sqlx.DB) ([]postCardData, []postCardData, error) {
 	const queryFeatured = `
 		SELECT
 			post_id,
@@ -102,8 +101,8 @@ func getPosts(db *sqlx.DB) ([]*postCardData, []*postCardData, error) {
 		WHERE featured = 0
 	`
 
-	var featuredPosts []*postCardData
-	var recentPosts []*postCardData
+	var featuredPosts []postCardData
+	var recentPosts []postCardData
 
 	errorFeatured := db.Select(&featuredPosts, queryFeatured)
 	if errorFeatured != nil {
@@ -113,14 +112,6 @@ func getPosts(db *sqlx.DB) ([]*postCardData, []*postCardData, error) {
 	errorRecent := db.Select(&recentPosts, queryRecent)
 	if errorRecent != nil {
 		return nil, nil, errorRecent
-	}
-
-	for _, featuredPostCard := range featuredPosts {
-		featuredPostCard.PostURL = "/post/" + featuredPostCard.PostID
-	}
-
-	for _, recentPostCard := range recentPosts {
-		recentPostCard.PostURL = "/post/" + recentPostCard.PostID
 	}
 
 	return featuredPosts, recentPosts, nil
