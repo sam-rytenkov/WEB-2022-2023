@@ -167,7 +167,7 @@ func postByID(db *sqlx.DB, postID int) (postData, error) {
 			image_url,
 			content
 		FROM
-			` + "`post`" + `
+			post
 		WHERE
 			post_id = ?
 	`
